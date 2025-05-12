@@ -45,8 +45,6 @@ Many organizations struggle with:
 
 
 
-## Getting Started
-
 ### Prerequisites
 
 - Python 3.7+  
@@ -60,31 +58,8 @@ DAG: Trigger twitter_etl manually or let it run daily.
 
 Monitoring: Check task logs in the UI or CloudWatch.
 
-#### Project Structure
-```
-etl-flow/
-├── dags/
-│   └── twitter_etl.py
-├── infra/
-│   └── airflow-ec2.yaml
-├── scripts/
-│   ├── extract.py
-│   ├── transform.py
-│   └── load.py
-├── requirements.txt
-├── .env.example
-└── README.md
 
-```
 
-### How It Works
-- extract.py: streams tweets via Tweepy.
-
-- transform.py: cleans text, extracts features, computes sentiment.
-
-- load.py: writes partitioned Parquet to S3.
-
-- twitter_etl.py: defines the Airflow DAG with retries and SLA.
 
 
 
